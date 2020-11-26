@@ -51,7 +51,6 @@ bool isPalindrome(const string& str)
 			aQ.push(nextChar);
 			aS.push(nextChar);
 		}
-
 	}
 	// Compare the queue chars with the stack chars
 	bool charsAreEqual = true;
