@@ -36,8 +36,8 @@ int main()
 bool isPalindrome(const string& str)
 {
 	// Create an empty queue and an empty stack
-	queue<char> aQ;
-	stack<char> aS;
+	queue<char> aQueue;
+	stack<char> aStack;
 	// Add each char of the str to both the queue and the stack
 	int length = str.length();
 	int i{};
@@ -48,20 +48,20 @@ bool isPalindrome(const string& str)
 		{
 			if (isupper(nextChar))
 				nextChar = tolower(nextChar);
-			aQ.push(nextChar);
-			aS.push(nextChar);
+			aQueue.push(nextChar);
+			aStack.push(nextChar);
 		}
 	}
 	// Compare the queue chars with the stack chars
 	bool charsAreEqual = true;
-	while (!aQ.empty() && charsAreEqual == true)
+	while (!aQueue.empty() && charsAreEqual == true)
 	{
-		char queueFront = aQ.front();
-		char stackTop = aS.top();
+		char queueFront = aQueue.front();
+		char stackTop = aStack.top();
 		if (queueFront == stackTop)
 		{
-			aQ.pop();
-			aS.pop();
+			aQueue.pop();
+			aStack.pop();
 		}
 		else
 			return false;
