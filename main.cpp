@@ -18,9 +18,17 @@ using namespace std;
 @return  True if passed string is a palindrome and false if not.*/
 bool isPalindrome(const string& str);
 
+
 /** Runs the palindrome program by calling isPalindrome
 @pre  none.
 @post  none. */
+void run();
+
+int main()
+{
+	run();
+}
+
 void run()
 {
 	string test;
@@ -35,15 +43,10 @@ void run()
 		if (test == "exit")
 			_cont = false;
 		else if (isPalindrome(test))
-			cout << "\"" << test << "\" is a palindrome.\n";
+			cout << "\"" << test << "\" is a palindrome.\n\n";
 		else
-			cout << "\"" << test << "\" is not a palindrome.\n";
+			cout << "\"" << test << "\" is not a palindrome.\n\n";
 	}
-}
-
-int main()
-{
-	run();
 }
 
 bool isPalindrome(const string& str)
