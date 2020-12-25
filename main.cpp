@@ -18,19 +18,29 @@ using namespace std;
 @return  True if passed string is a palindrome and false if not.*/
 bool isPalindrome(const string& str);
 
-int main()
+void run()
 {
 	string test;
-	cout << "Input a palindrome:\n";
-	getline(cin, test);
-	cout << "\n\n";
+	bool _cont{ true };
 
-	if (isPalindrome(test))
-		cout << "\"" << test << "\" is a palindrome.\n";
-	else
-		cout << "\"" << test << "\" is not a palindrome.\n";
+	while (_cont)
+	{
+		cout << "Input a palindrome (enter 'exit' to exit):\n";
+		getline(cin, test);
+		cout << "\n\n";
 
-	return 0;
+		if (test == "exit")
+			_cont = false;
+		else if (isPalindrome(test))
+			cout << "\"" << test << "\" is a palindrome.\n";
+		else
+			cout << "\"" << test << "\" is not a palindrome.\n";
+	}
+}
+
+int main()
+{
+	run();
 }
 
 bool isPalindrome(const string& str)
@@ -41,6 +51,8 @@ bool isPalindrome(const string& str)
 	// Add each char of the str to both the queue and the stack
 	int length = str.length();
 	int i{};
+	int j{};
+
 	for (i = 0; i < length; i++)
 	{
 		char nextChar = str[i];
@@ -52,6 +64,7 @@ bool isPalindrome(const string& str)
 			aStack.push(nextChar);
 		}
 	}
+
 	// Compare the queue chars with the stack chars
 	bool charsAreEqual = true;
 	while (!aQueue.empty() && charsAreEqual == true)
