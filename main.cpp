@@ -18,6 +18,9 @@ using namespace std;
 @return  True if passed string is a palindrome and false if not.*/
 bool isPalindrome(const string& str);
 
+/** Runs the palindrome program by calling isPalindrome
+@pre  none.
+@post  none. */
 void run()
 {
 	string test;
